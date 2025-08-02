@@ -5,43 +5,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>Document</title>
+    <title>Slide SENAI</title>
     <style>
         @keyframes slider {
+
             0%,
             33% {
                 background-image: url(./img/entrada.jpg);
                 --text-description: "Entrada do SENAI Jandira, após finalizar 1 semestre."
             }
+
             34%,
             66% {
                 background-image: url(./img/pingpong.jpg);
                 --text-description: "Carlão, grande amigo no Senai, na área de mesa do ping-pong!"
             }
+
             67%,
             100% {
                 background-image: url(./img/refeitorio.jpg);
                 --text-description: "Onde faço minhas refeições diárias."
             }
         }
-        
+
         @keyframes fade {
             0% {
                 opacity: 0;
             }
+
             15%,
             85% {
                 opacity: 1;
             }
+
             100% {
                 opacity: 0;
             }
         }
+
+        .animate-slider {
+            animation: slider 12s infinite, fade 4s;
+        }
+
+        .box-shadow {
+            box-shadow: 0 0 16px #000;
+        }
     </style>
 </head>
 
-<body class="px-0 grid place-items-center h-screen bg-[#0003] box-border">
-    <div class="relative w-[80%] h-[80%] bg-red-400 grid bg-center bg-cover overflow-hidden animation-{slider} duration-75">
+<body class="px-0 m-0 box-border grid place-items-center h-screen bg-[#0003]">
+    <div class="relative w-[80%] h-[80%] box-shadow rounded-lg bg-cover bg-center overflow-hidden animate-slider 
+    after:content-[var(--text-description)] after:absolute after:w-full after:bottom-0 after:py-4 after:bg-[#0009] 
+    after:text-white after:text-center after:font-sans after:text-2xl">
     </div>
 </body>
 
